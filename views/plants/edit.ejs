@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"
+    />
+  </head>
+  <body>
+    <a href="/plants">Back to all plants</a>
+    <h1>Edit plant</h1>
+    <form action="/plants/<%= plant._id %>?_method=PUT" method="post">
+      <label>
+        Name:
+        <input name="name" value="<%= plant.name%>" />
+      </label>
+      <lable>
+        Description:
+        <textarea name="description" required>
+            <%= plant.description%>
+        </textarea>
+      </lable>
+      <button>Update Plant</button>
+    </form>
+    <a href="/plants">Back to Plants</a>
+  </body>
+</html>
